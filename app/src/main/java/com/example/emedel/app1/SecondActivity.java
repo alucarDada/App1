@@ -1,6 +1,7 @@
 package com.example.emedel.app1;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -11,6 +12,7 @@ import android.support.annotation.StringDef;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -24,7 +26,7 @@ public class SecondActivity extends AppCompatActivity {
     private ImageButton btnCamera;
     private ImageButton btnWeb;
     private final int PHONE_CALL_CODE = 100;
-    private final int PHONE_WEB_CODE = 0;
+    private final int PICTURE_FROM_CAMARA = 50;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +87,7 @@ public class SecondActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                    startActivity(intent);
+                    startActivityForResult(intent,PICTURE_FROM_CAMARA);
                 }
             });
         }
@@ -115,11 +117,25 @@ public class SecondActivity extends AppCompatActivity {
                     }
                 }*/
                 break;
-            case PHONE_WEB_CODE:
-
-                break;
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch(requestCode){
+            case PICTURE_FROM_CAMARA:
+                if(resultCode == Activity.RESULT_OK){
+                    String result = data.toUri(0);
+                    Toast.makeText(this,"El result es: "+result,Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(this,"Error",Toast.LENGTH_LONG).show();
+                }
+                break;
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
                 break;
         }
     }
