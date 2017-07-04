@@ -23,7 +23,7 @@ public class SecondActivity extends AppCompatActivity {
     private ImageButton btnCall;
     private ImageButton btnCamera;
     private ImageButton btnWeb;
-    private final int PHONE_CALL_CODE = 99;
+    private final int PHONE_CALL_CODE = 100;
     private final int PHONE_WEB_CODE = 0;
 
     @Override
