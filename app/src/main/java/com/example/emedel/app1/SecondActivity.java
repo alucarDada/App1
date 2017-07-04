@@ -76,7 +76,17 @@ public class SecondActivity extends AppCompatActivity {
                         }
                     }
                 }
+                public void algo(){
 
+                }
+            });
+            btnCamera = (ImageButton) findViewById(R.id.imgBtnCamera);
+            btnCamera.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                    startActivity(intent);
+                }
             });
         }
     }
