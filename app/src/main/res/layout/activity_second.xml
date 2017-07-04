@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.emedel.app1.SecondActivity">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="157dp"
+        app:srcCompat="@android:drawable/ic_menu_call" />
+
+    <ImageButton
+        android:id="@+id/imgBtnCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="157dp"
+        app:srcCompat="@android:drawable/ic_menu_call"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/imgBtnCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imgBtnCall"
+        android:layout_alignStart="@+id/imgBtnCall"
+        android:layout_below="@+id/imgBtnCall"
+        android:layout_marginTop="13dp"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <ImageButton
+        android:id="@+id/imgBtnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imgBtnCamera"
+        android:layout_alignRight="@+id/imgBtnCamera"
+        android:layout_below="@+id/imgBtnCamera"
+        android:layout_marginTop="19dp"
+        app:srcCompat="?attr/actionModeShareDrawable"
+        android:layout_alignLeft="@+id/imgBtnCamera"
+        android:layout_alignStart="@+id/imgBtnCamera" />
+
+    <ImageButton
+        android:id="@+id/imgBtnWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imgBtnShare"
+        android:layout_alignRight="@+id/imgBtnShare"
+        android:layout_below="@+id/imgBtnShare"
+        android:layout_marginTop="19dp"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
+</RelativeLayout>
